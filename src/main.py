@@ -20,7 +20,7 @@ class Main:
     def _args(self):
         import argparse
         parser = argparse.ArgumentParser(description="PMScreen Test")
-        parser.add_argument("--quiet", action="store_true", help="Enable debug output")
+        parser.add_argument("--quiet", action="store_true", help="Disable debug output")
         parser.add_argument("--fast", action="store_true", dest="fast", default=False, help="Enable fast flush")
         return parser.parse_args()
 
