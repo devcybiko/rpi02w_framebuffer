@@ -54,14 +54,6 @@ class PMScreen:
 
     def _slow_write_framebuffer(self, img: Image.Image) -> None:
         """Write the image to the framebuffer slowly (for debugging)."""
-        if self._screen.frame_buffer:
-            _debug(f"Writing to framebuffer slowly: {self._screen.frame_buffer}")
-            from clib import rgba_to_rgb16
-
-            _debug(f"Image size: {img.size}, mode: {img.mode}")
-            if self._screen.rotate:
-                img = img.rotate(self._screen.rotate, expand=True)
-            raw = img.tobytes("raw")
             _debug(f"Raw image size: {len(raw)} bytes")
             # Convert the image to RGB565 format
             rgb565 = rgba_to_rgb16(raw, img.width, img.height)
