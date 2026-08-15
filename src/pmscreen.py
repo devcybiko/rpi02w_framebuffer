@@ -79,3 +79,20 @@ class PMScreen:
     def rectangle(self, rect: tuple, color="white", width=1) -> None:
         self._print(f"Drawing rectangle with rect: {rect}, color: {color}, width: {width}")
         self._draw.rectangle(rect, outline=color, width=width)
+
+    def text(self, position: tuple, text: str, color="white", font_size=32) -> None:
+        self._print(f"Drawing text at position: {position}, text: {text}, color: {color}, font_size: {font_size}")
+        try:
+            from PIL import ImageFont
+            # Try to load a system font
+            font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", font_size)
+        except Exception as e:
+            self._print(f"Failed to load font: {e}, using default")
+            font = ImageFont.load_default()
+        # compute the center of the text and adjust the position accordingly
+        bbox = self._draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+        adjusted_position = (position[0] - text_width // 2, position[1] - text_height // 2)
+        self._print(f"Adjusted text position: {adjusted_position}, text size: ({text_width}, {text_height})")
+        self._draw.text(adjusted_position, text, fill=color, font=font)
