@@ -18,7 +18,7 @@ class Main:
         import argparse
         parser = argparse.ArgumentParser(description="PMScreen Test")
         parser.add_argument("--debug", action="store_true", help="Enable debug output")
-        parser.add_argument("--debug", action="store_true", help="Enable debug output")
+        parser.add_argument("--fast", action="store_true", help="Enable fast flush")
         return parser.parse_args()
 
 if __name__ == "__main__":
