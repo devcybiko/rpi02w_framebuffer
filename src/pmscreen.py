@@ -38,13 +38,13 @@ class PMScreen:
                 )
         self._hard_clear()
 
-    def _hard_clear(self, color: str = "\x00") -> None:
+    def _hard_clear(self, color: bytes = b"\x00") -> None:
         """Clear the framebuffer by writing zeros to it."""
         if self._screen.frame_buffer:
             # Open the framebuffer device and write zeros to it
             with open(self._screen.frame_buffer, "wb") as f:
                 f.write(
-                    b"\x00" * (self._screen.width * self._screen.height * 2)
+                    color * (self._screen.width * self._screen.height * 2)
                 )  # Assuming RGB565 format, 2 bytes per pixel
 
     def _write_framebuffer(self, img: Image.Image) -> None:
