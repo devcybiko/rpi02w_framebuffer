@@ -1,10 +1,6 @@
 import os
 from dataclasses import dataclass
 from PIL import Image
-from pmgfxlib import PMBitmap
-from glslib.dicts import from_dict
-from glslib.logger import _debug
-from pymirror.pmrect import PMRect
 
 @from_dict
 @dataclass
