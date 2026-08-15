@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from PIL import Image, ImageDraw
 
 DEBUG = True
+FAST_FLUSH = True
 
 def _debug(*args, **kwargs) -> None:
     """Print debug messages to the console."""
