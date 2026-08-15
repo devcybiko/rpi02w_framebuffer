@@ -13,7 +13,7 @@ class Main:
 
     def run(self):
         print("Running Main class")
-        screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=not args.quiet)t)
+        screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=not args.quiet)
 
 if __name__ == "__main__":
     main = Main()
