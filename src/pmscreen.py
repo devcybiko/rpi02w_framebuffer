@@ -16,7 +16,7 @@ class PMScreenConfig:
     frame_buffer: str = "/dev/fb0"  # Path to framebuffer device
 
 class PMScreen:
-    def __init__(self, _screen: PMScreenConfig, fast):
+    def __init__(self, _screen: PMScreenConfig, fast_flush: bool = True):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
         self._img = Image.new("RGBA", (self._screen.width, self._screen.height), 0)
         self._draw = ImageDraw.Draw(self._img)
