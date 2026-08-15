@@ -38,7 +38,7 @@ class PMScreen:
                 )
         self._hard_clear()
 
-    def _hard_clear(self, color: str = "#000") -> None:
+    def _hard_clear(self, color: str = "\x00") -> None:
         """Clear the framebuffer by writing zeros to it."""
         if self._screen.frame_buffer:
             # Open the framebuffer device and write zeros to it
