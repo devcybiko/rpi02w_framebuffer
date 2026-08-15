@@ -44,7 +44,6 @@ class PMScreen:
                 _debug(f"Saving RGB565 image to {self._screen.frame_buffer}")
                 f.write(rgb565)
             _debug("Framebuffer write complete")
-            _debug("Framebuffer write complete")
 
     def _slow_write_framebuffer(self, img: Image.Image = None) -> None:
         """Write the image to the framebuffer slowly (for debugging)."""
