@@ -15,7 +15,11 @@ class Main:
         screen.flush()  # Flush the changes to the framebuffer
 
     def _args(self):
-        return []
+        import argparse
+        parser = argparse.ArgumentParser(description="PMScreen Test")
+        parser.add_argument("--debug", action="store_true", help="Enable debug output")
+        parser.add_argument("--debug", action="store_true", help="Enable debug output")
+        return parser.parse_args()
 
 if __name__ == "__main__":
     main = Main()
