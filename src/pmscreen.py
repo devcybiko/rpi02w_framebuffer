@@ -32,18 +32,6 @@ class PMScreen:
                     self._screen.height,
                     self._screen.width,
                 )
-        # Initialize the bitmap with the screen dimensions
-        self.bitmap = PMBitmap(_screen.width, _screen.height)
-        self.rect = PMRect(0, 0, _screen.width - 1, _screen.height - 1)
-        gfx = self.bitmap.gfx
-        gfx.rect = (0, 0, _screen.width - 1, _screen.height - 1)
-        gfx.color = _screen.color or gfx.color
-        gfx.bg_color = _screen.bg_color or gfx.bg_color
-        gfx.text_color = _screen.text_color or gfx.text_color
-        gfx.text_bg_color = _screen.text_bg_color or gfx.text_bg_color
-        gfx.line_width = _screen.line_width or gfx.line_width
-        gfx.set_font(self._screen.font_name, self._screen.font_size)
-
         self._hard_clear()
 
     def _hard_clear(self):
