@@ -14,6 +14,8 @@ class Main:
         screen.line((0, 0, 1919, 1079))
         screen.flush()  # Flush the changes to the framebuffer
 
-    
+    def __args__(self):
+        return []
+
 if __name__ == "__main__":
     main = Main()
