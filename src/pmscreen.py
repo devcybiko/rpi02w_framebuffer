@@ -83,3 +83,5 @@ class PMScreen:
         self._draw.line(rect, fill=color, width=width)
 
     def rectangle(self, rect: tuple, color="white", width=1) -> None:
+        self._print(f"Drawing rectangle with rect: {rect}, color: {color}, width: {width}")
+        self._draw.rectangle(rect, outline=color, width=width)
