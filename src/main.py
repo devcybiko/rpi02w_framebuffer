@@ -10,7 +10,8 @@ class Main:
     def __init__(self):
         print("Initializing Main class")
         screen = PMScreen(PMScreenConfig())
-        sel
+        screen.clear()  # Clear the screen
+        screen.
 
 if __name__ == "__main__":
     main = Main()
