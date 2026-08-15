@@ -51,3 +51,11 @@ class PMScreen:
         """Flush the image to the framebuffer."""
         self._print(f"Flushing image to framebuffer")
         self._slow_write_framebuffer(img)
+
+    def line(self, rect: tuple, color="white", width=1) -> None:
+        self._print(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
+        self._draw.line(rect, fill=color, width=width)
+
+    def rectangle(self, rect: tuple, color="white", width=1) -> None:
+        self._print(f"Drawing rectangle with rect: {rect}, color: {color}, width: {width}")
+        self._draw.rectangle(rect, outline=color, width=width)
