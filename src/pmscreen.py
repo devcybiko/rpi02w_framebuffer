@@ -4,10 +4,6 @@ from clib import rgba_to_rgb16
 
 DEBUG = True
 
-def _debug(*args, **kwargs) -> None:
-    """Print debug messages to the console."""
-    if DEBUG:
-        print("[DEBUG]", *args, **kwargs)
 
 @dataclass
 class PMScreenConfig:
