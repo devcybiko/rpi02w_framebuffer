@@ -5,7 +5,7 @@ class Main:
     def __init__(self):
         print("Initializing Main class")
         self.args = self._args()
-        print(f"Arguments: {args}")
+        print(f"Arguments: {self.args}")
 
     def _args(self):
         import argparse
