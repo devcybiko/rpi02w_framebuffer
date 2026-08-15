@@ -11,7 +11,7 @@ class Main:
         print("Initializing Main class")
         args = self._args()
         print(f"Arguments: {args}")
-        screen = PMScreen(PMScreenConfig())
+        screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=args.debug)
         screen.clear()  # Clear the screen
         screen.line((0, 0, 1919, 1079))
         screen.flush()  # Flush the changes to the framebuffer
