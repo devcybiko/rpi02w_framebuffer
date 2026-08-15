@@ -4,7 +4,6 @@ from clib import rgba_to_rgb16
 
 DEBUG = True
 
-
 @dataclass
 class PMScreenConfig:
     width: int = 1920
@@ -19,6 +18,10 @@ class PMScreen:
         self._fast_flush = fast_flush
         self._hard_clear(b"\x00\x00")  # Clear the framebuffer with white color
 
+def _debug(*args, **kwargs) -> None:
+    """Print debug messages to the console."""
+    if DEBUG:
+        print("[DEBUG]", *args, **kwargs)
     def _hard_clear(self, color: bytes = b"\x00\x00") -> None:
         """Clear the framebuffer by writing zeros to it."""
         # Open the framebuffer device and write zeros to it
