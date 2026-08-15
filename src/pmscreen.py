@@ -12,9 +12,9 @@ class PMScreen:
     def __init__(self, _screen: PMScreenConfig, fast_flush: bool = True, debug: bool = False):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
         self._debug = debug
+        self._fast_flush = fast_flush
         self._img = Image.new("RGBA", (self._screen.width, self._screen.height), 0)
         self._draw = ImageDraw.Draw(self._img)
-        self._fast_flush = fast_flush
         self._hard_clear(b"\x00\x00")  # Clear the framebuffer with white color
 
     def _debug(self, *args, **kwargs) -> None:
