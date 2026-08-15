@@ -18,7 +18,7 @@ class PMScreen:
 
     def _debug(self, *args, **kwargs) -> None:
         """Print debug messages to the console."""
-        if self._debug:
+        if self._debug and self._debug:
             print("[DEBUG]", *args, **kwargs)
 
     def _hard_clear(self, color: bytes = b"\x00\x00") -> None:
