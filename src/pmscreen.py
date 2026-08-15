@@ -39,18 +39,18 @@ class PMScreen:
             self._debug(f"Raw image size: {len(raw)} bytes")
             # Convert the image to RGB565 format
             rgb565 = rgba_to_rgb16(raw, img.width, img.height)
-            _debug(f"Converted to RGB565 size: {len(rgb565)} bytes")
+            self._debug(f"Converted to RGB565 size: {len(rgb565)} bytes")
             with open(self._screen.frame_buffer, "wb") as f:
-                _debug(f"Saving RGB565 image to {self._screen.frame_buffer}")
+                self._debug(f"Saving RGB565 image to {self._screen.frame_buffer}")
                 f.write(rgb565)
-            _debug("Framebuffer write complete")
+            self._debug("Framebuffer write complete")
 
     def _slow_write_framebuffer(self, img: Image.Image = None) -> None:
         """Write the image to the framebuffer slowly (for debugging)."""
         ## convert the image to RGB565 format using python code assuming 1920x1080 resolution x2 RGB565 bytes per pixel
         import struct
         rgb565 = bytearray()
-        _debug(f"converting RGB565 buffer")
+        self._debug(f"converting RGB565 buffer")
         img = img or self._img
         for y in range(img.height):
             _debug(f"...converting row: {y}/{img.height}")
