@@ -62,7 +62,7 @@ class PMScreen:
         _debug(f"converting RGB565 buffer")
         img = img or self._img
         for y in range(img.height):
-            _debug(f"...converting row: {len(rgb565)}")
+            _debug(f"...converting row: {y}")
             for x in range(img.width):
                 r, g, b, a = img.getpixel((x, y))
                 # RGB565: RRRRRGGGGGGBBBBB (5 bits R, 6 bits G, 5 bits B)
