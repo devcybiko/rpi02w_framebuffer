@@ -21,7 +21,7 @@ class PMScreenConfig:
     font_name: str = "Roboto-Regular"
     font_size: int = 64
     output_file: str = None
-    frame_buffer: str = "./dev/fb0"  # Path to framebuffer device
+    frame_buffer: str = "/dev/fb0"  # Path to framebuffer device
 
 class PMScreen:
     def __init__(self, _screen: PMScreenConfig):
