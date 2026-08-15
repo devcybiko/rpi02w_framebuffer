@@ -52,6 +52,7 @@ class PMScreen:
                 f.write(rgb565)
             _debug("Framebuffer write complete")
 
+    def 
     def flush(self) -> None:
         img = self.bitmap._img
         self._write_framebuffer(img)
