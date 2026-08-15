@@ -77,7 +77,8 @@ class PMScreen:
 
     def flush(self) -> None:
         """Flush the current image to the framebuffer."""
-        self._slow_write_framebuffer(self._img)
+        if FAST_FLUSH:
+            self._slow_write_framebuffer(self._img)
 
     def clear(self, color=None) -> None:
         _debug(f"Clearing screen with color: {color}")
