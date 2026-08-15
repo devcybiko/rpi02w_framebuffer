@@ -2,8 +2,6 @@ from dataclasses import dataclass
 from PIL import Image, ImageDraw
 from clib import rgba_to_rgb16
 
-DEBUG = True
-
 @dataclass
 class PMScreenConfig:
     width: int = 1920
@@ -80,5 +78,5 @@ class PMScreen:
         )
 
     def line(self, rect: tuple, color="white", width=1) -> None:
-        _debug(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
+        self._debug(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
         self._draw.line(rect, fill=color, width=width)
