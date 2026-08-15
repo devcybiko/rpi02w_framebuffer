@@ -96,7 +96,9 @@ class PMScreen:
             self._print(f"Failed to load font: {e}, using default")
             font = ImageFont.load_default()
         # compute the center of the text and adjust the position accordingly
-        text_width, text_height = self._draw.textsize(text, font=font)
+        bbox = self._draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
         adjusted_position = (position[0] - text_width // 2, position[1] - text_height // 2)
         self._print(f"Adjusted text position: {adjusted_position}, text size: ({text_width}, {text_height})")
-        self._draw.text(position, text, fill=color, font=font)
+        self._draw.text(adjusted_position, text, fill=color, font=font)
