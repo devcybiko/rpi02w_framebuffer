@@ -53,7 +53,7 @@ class PMScreen:
         self._debug(f"converting RGB565 buffer")
         img = img or self._img
         for y in range(img.height):
-            _debug(f"...converting row: {y}/{img.height}")
+            self._debug(f"...converting row: {y}/{img.height}")
             for x in range(img.width):
                 r, g, b, a = img.getpixel((x, y))
                 # RGB565: RRRRRGGGGGGBBBBB (5 bits R, 6 bits G, 5 bits B)
@@ -74,7 +74,7 @@ class PMScreen:
             self._slow_write_framebuffer(self._img)
 
     def clear(self, color=None) -> None:
-        _debug(f"Clearing screen with color: {color}")
+        self._debug(f"Clearing screen with color: {color}")
         self._draw.rectangle(
             (0, 0, self._img.width-1, self._img.height-1), 0x00 if color is None else color
         )
