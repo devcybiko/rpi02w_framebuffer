@@ -12,6 +12,7 @@ class PMScreen:
     def __init__(self, _screen: PMScreenConfig, fast_flush: bool = True, debug: bool = False):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
         self._debug = debug
+        self._fast_flush = fast_flush
         self._print(f"Initialized PMScreen with config: {self._screen}, fast_flush={fast_flush}, debug={debug}")
         self._img = Image.new("RGBA", (self._screen.width, self._screen.height), 0)
         self._draw = ImageDraw.Draw(self._img)
