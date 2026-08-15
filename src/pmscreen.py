@@ -35,8 +35,6 @@ class PMScreen:
         if self._screen.frame_buffer:
             _debug(f"Writing to framebuffer: {self._screen.frame_buffer}")
             from clib import rgba_to_rgb16
-
-            _debug(f"Image size: {img.size}, mode: {img.mode}")
             if self._screen.rotate:
                 img = img.rotate(self._screen.rotate, expand=True)
             raw = img.tobytes("raw")
