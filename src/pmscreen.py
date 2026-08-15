@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from PIL import Image, ImageDraw
+from clib import rgba_to_rgb16
 
 @dataclass
 class PMScreenConfig:
