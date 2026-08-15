@@ -18,7 +18,8 @@ class Main:
     def run(self):
         print("Running Main class")
         screen = PMScreen(PMScreenConfig(), debug = not self.args.quiet)
-        screen._hard_clear(b"\x00\x1f")  # Clear the framebuffer to black
+        screen._hard_clear()  # Clear the framebuffer to black
+        screen.flush()  # Flush the cleared image to the framebuffer
 
 if __name__ == "__main__":
     main = Main()
