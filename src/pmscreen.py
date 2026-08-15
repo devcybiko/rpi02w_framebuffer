@@ -54,7 +54,7 @@ class PMScreen:
 
     def _slow_write_framebuffer(self, img: Image.Image) -> None:
         """Write the image to the framebuffer slowly (for debugging)."""
-        ## convert the image to RGB565 format using python code
+        ## convert the image to RGB565 format using python code assuming 1920x1080 resolution x
 
     def clear(self) -> None:
         self._draw.rectangle(
