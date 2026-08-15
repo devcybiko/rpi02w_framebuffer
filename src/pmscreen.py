@@ -52,13 +52,6 @@ class PMScreen:
                 f.write(rgb565)
             _debug("Framebuffer write complete")
 
-    def _atomic_write(self, img: Image.Image) -> None:
-        if self._screen.output_file:
-            self.bitmap._img.convert("RGB").save(
-                self._screen.output_file + ".tmp", "JPEG"
-            )
-            os.rename(self._screen.output_file + ".tmp", self._screen.output_file)
-
     def flush(self) -> None:
         img = self.bitmap._img
         self._write_framebuffer(img)
