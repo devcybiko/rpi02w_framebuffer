@@ -12,15 +12,6 @@ def _debug(*args, **kwargs) -> None:
 class PMScreenConfig:
     width: int = 1920
     height: int = 1080
-    rotate: int = 0  # Rotation angle in degrees
-    color: str = "#fff"  # default color
-    bg_color: str = "#000"  # default background color
-    text_color: str = color
-    text_bg_color: str = None
-    line_width: int = 1
-    font_name: str = "Roboto-Regular"
-    font_size: int = 64
-    output_file: str = None
     frame_buffer: str = "/dev/fb0"  # Path to framebuffer device
 
 class PMScreen:
