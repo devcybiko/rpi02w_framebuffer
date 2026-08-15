@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-from PIL import Image
+from PIL import Image, ImageDraw
 
 DEBUG = True
 def _debug(*args, **kwargs) -> None:
