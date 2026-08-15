@@ -12,7 +12,7 @@ class Main:
         screen = PMScreen(PMScreenConfig())
         screen.clear()  # Clear the screen
         screen.line((0, 0, 100, 100), color=0xFF, width=2)
-        
+        screen.flush()  # Flush the changes to the framebuffer
 
 if __name__ == "__main__":
     main = Main()
