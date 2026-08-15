@@ -11,5 +11,9 @@ class Main:
         parser.add_argument("--fast", action="store_true", dest="fast", help="Enable fast flush")
         return parser.parse_args()
 
+    def run(self):
+        print("Running Main class")
+
 if __name__ == "__main__":
     main = Main()
+    main.run()
