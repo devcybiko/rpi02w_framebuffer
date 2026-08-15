@@ -90,4 +90,4 @@ class PMScreen:
 
     def line(self, rect: tuple, color=None, width=None) -> None:
         _debug(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
-        self._draw.line(rect, fill=color or self.gfx.color, width=width or self.gfx.line_width)
+        self._draw.line(rect, fill=color, width=width or self.gfx.line_width)
