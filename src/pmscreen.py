@@ -60,3 +60,6 @@ class PMScreen:
         self._draw.rectangle(
             (0, 0, self._img.width-1, self._img.height-1), fill=self.gfx.bg_color
         )
+
+    def line(self, rect: tuple, color=None, width=None) -> None:
+        self._draw.line(rect, fill=color or self.gfx.color, width=width or self.gfx.line_width)
