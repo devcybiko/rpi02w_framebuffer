@@ -20,6 +20,7 @@ class PMScreen:
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
         self._img = Image.new("RGBA", (self._screen.width, self._screen.height), 0)
         self._draw = ImageDraw.Draw(self._img)
+        self._fast_flush = fast_flush
         self._hard_clear(b"\x00\x00")  # Clear the framebuffer with white color
 
     def _hard_clear(self, color: bytes = b"\x00\x00") -> None:
@@ -77,7 +78,7 @@ class PMScreen:
 
     def flush(self) -> None:
         """Flush the current image to the framebuffer."""
-        if FAST_FLUSH:
+        if self._fast_flush:
             self._fast_write_framebuffer(self._img)
         else:
             self._slow_write_framebuffer(self._img)
