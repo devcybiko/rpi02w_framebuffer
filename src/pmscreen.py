@@ -11,4 +11,10 @@ class PMScreenConfig:
 class PMScreen:
     def __init__(self, _screen: PMScreenConfig, fast_flush: bool = True, debug: bool = False):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
+        self._debug = debug
+        self._print(f"Initialized PMScreen with config: {self._screen}, fast_flush={fast_flush}, debug={debug}")
 
+    def _print(self, *args, **kwargs) -> None:
+        """Print debug messages to the console."""
+        if self._debug:
+            print("[DEBUG]", *args, **kwargs)
