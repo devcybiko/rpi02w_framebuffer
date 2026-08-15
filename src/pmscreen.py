@@ -98,5 +98,5 @@ class PMScreen:
         # compute the center of the text and adjust the position accordingly
         text_width, text_height = self._draw.textsize(text, font=font)
         adjusted_position = (position[0] - text_width // 2, position[1] - text_height // 2)
-        self._print(f"Adjusted text position: {adjust
+        self._print(f"Adjusted text position: {adjusted_position}, text size: ({text_width}, {text_height})")
         self._draw.text(position, text, fill=color, font=font)
