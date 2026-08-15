@@ -13,9 +13,9 @@ class Main:
         print(f"Arguments: {args}")
         screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=not args.quiet)
         screen.clear()  # Clear the screen
-        screen.rectangle((10, 10, 1910, 1079), color="red", width=5)  # Draw a white rectangle around the screen
-        screen.line((10, 10, 1919, 1079), color="green", width=3)  # Draw a green diagonal line
-        screen.line((10, 1079, 1919, 10), color="blue", width=3)  # Draw a blue diagonal line
+        screen.rectangle((10, 10, 1910, 1070), color="red", width=5)  # Draw a white rectangle around the screen
+        screen.line((10, 10, 1910, 1070), color="green", width=3)  # Draw a green diagonal line
+        screen.line((10, 1070, 1910, 10), color="blue", width=3)  # Draw a blue diagonal line
         screen.text((1920//2, 1080//2), "Hello, PMScreen!", color="yellow")  # Draw text on the screen
         screen.flush()  # Flush the changes to the framebuffer
 
