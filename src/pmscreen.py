@@ -47,4 +47,7 @@ class PMScreen:
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(rgb565)
 
-    
+    def flush(self, img: Image.Image = None) -> None:
+        """Flush the image to the framebuffer."""
+        self._print(f"Flushing image to framebuffer")
+        self._slow_write_framebuffer(img)
