@@ -18,7 +18,6 @@ class PMScreenConfig:
     output_file: str = None
     frame_buffer: str = None  # Path to framebuffer device
 
-
 class PMScreen:
     def __init__(self, _screen: PMScreenConfig):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
