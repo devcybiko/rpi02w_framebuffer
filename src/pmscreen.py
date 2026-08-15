@@ -21,7 +21,6 @@ class PMScreen:
         self._img = Image.new("RGBA", (self._screen.width, self._screen.height), 0)
         self._draw = ImageDraw.Draw(self._img)
         self._fast_flush = fast_flush
-        self._debug = debug
         self._hard_clear(b"\x00\x00")  # Clear the framebuffer with white color
 
     def _hard_clear(self, color: bytes = b"\x00\x00") -> None:
