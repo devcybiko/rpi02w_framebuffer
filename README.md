@@ -5,4 +5,4 @@
 
 ## Reaquirements
 - Raspberry Pi Zero 2 W
-- 
+- Rasp
