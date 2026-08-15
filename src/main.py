@@ -1,3 +1,6 @@
+from pmscreen import PMScreen, PMScreenConfig
+
+
 class Main:
     def __init__(self):
         print("Initializing Main class")
