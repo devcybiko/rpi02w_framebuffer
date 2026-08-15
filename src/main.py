@@ -1,0 +1,12 @@
+from src.pmscreen import PMScreen, PMScreenConfig
+
+DEBUG = True
+def _debug(*args, **kwargs) -> None:
+    """Print debug messages to the console."""
+    if DEBUG:
+        print("[DEBUG]", *args, **kwargs)
+
+class Main:
+    def __init__(self):
+        _debug("Initializing Main class")
+        self.screen = PMScreen(PMScreenConfig())
