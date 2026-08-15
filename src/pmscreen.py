@@ -21,7 +21,7 @@ class PMScreenConfig:
     font_name: str = "Roboto-Regular"
     font_size: int = 64
     output_file: str = None
-    frame_buffer: str = None  # Path to framebuffer device
+    frame_buffer: str = "./fb0.jpg"  # Path to framebuffer device
 
 class PMScreen:
     def __init__(self, _screen: PMScreenConfig):
@@ -31,12 +31,11 @@ class PMScreen:
 
     def _hard_clear(self, color: bytes = b"\x00") -> None:
         """Clear the framebuffer by writing zeros to it."""
-        if self._img:
-            # Open the framebuffer device and write zeros to it
-            with open(self._screen.frame_buffer, "wb") as f:
-                f.write(
-                    color * (self._screen.width * self._screen.height * 2)
-                )  # Assuming RGB565 format, 2 bytes per pixel
+        # Open the framebuffer device and write zeros to it
+        with open(self._screen.frame_buffer, "wb") as f:
+            f.write(
+                color * (self._screen.width * self._screen.height * 2)
+            )  # Assuming RGB565 format, 2 bytes per pixel
 
     def _write_framebuffer(self, img: Image.Image) -> None:
         """Write the image to the framebuffer."""
