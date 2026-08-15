@@ -95,5 +95,5 @@ class PMScreen:
         except Exception as e:
             self._print(f"Failed to load font: {e}, using default")
             font = ImageFont.load_default()
-        
+        #
         self._draw.text(position, text, fill=color, font=font)
