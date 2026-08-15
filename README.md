@@ -8,4 +8,4 @@
 - Raspbian 12 (bookworm) Kernel 6.12.62
 
 ## Build
-- 
+- `./build.sh
