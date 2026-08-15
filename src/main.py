@@ -10,3 +10,4 @@ class Main:
     def __init__(self):
         print("Initializing Main class")
         self.screen = PMScreen(PMScreenConfig())
+
