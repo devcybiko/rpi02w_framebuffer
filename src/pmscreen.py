@@ -57,7 +57,7 @@ class PMScreen:
         ## convert the image to RGB565 format using python code assuming 1920x1080 resolution x2 RGB565 bytes per pixel
         import struct
         rgb565 = bytearray()
-        _debug(f"Writing RGB565 buffer, length: {len(rgb565)}")
+        _debug(f"Writing RGB565 buffer")
         img = img or self._img
         for y in range(img.height):
             _debug(f"Writing RGB565 buffer, length: {len(rgb565)}")
