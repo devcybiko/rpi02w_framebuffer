@@ -2,3 +2,4 @@ node_modules/
 *.jnk
 .DS_Store
 __pycache__/
+*.egg-info/

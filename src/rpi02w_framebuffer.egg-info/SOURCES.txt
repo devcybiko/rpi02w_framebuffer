@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-src/main.py
-src/pmscreen.py
-src/rpi02w_framebuffer.egg-info/PKG-INFO
-src/rpi02w_framebuffer.egg-info/SOURCES.txt
-src/rpi02w_framebuffer.egg-info/dependency_links.txt
-src/rpi02w_framebuffer.egg-info/requires.txt
-src/rpi02w_framebuffer.egg-info/top_level.txt
