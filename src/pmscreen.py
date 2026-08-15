@@ -28,7 +28,7 @@ class PMScreen:
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(color * (self._screen.width * self._screen.height))  # RGB565: 2 bytes per pixel
 
-    def _write_framebuffer(self, img: Image.Image) -> None:
+    def _fast_write_framebuffer(self, img: Image.Image) -> None:
         """Write the image to the framebuffer."""
         # self._screen.frame_buffer = "./fb0.jpg"
         if self._screen.frame_buffer:
