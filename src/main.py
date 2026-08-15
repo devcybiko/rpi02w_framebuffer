@@ -17,7 +17,7 @@ class Main:
         screen.line((0, 0, 1919, 1079), color="green", width=3)  # Draw a green diagonal line
         screen.line((0, 1079, 1919, 0), color="blue", width=3)  # Draw a blue diagonal line
         words = "Hello, PMScreen!"
-        screen.text((1920/2-"", 1080/2), "Hello, PMScreen!", color="yellow")  # Draw text on the screen
+        screen.text((1920/2-len(words)*6, 1080/2), words, color="yellow")  # Draw text on the screen
         screen.flush()  # Flush the changes to the framebuffer
 
     def _args(self):
