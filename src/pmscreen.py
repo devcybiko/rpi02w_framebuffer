@@ -16,3 +16,9 @@ class PMScreen:
         """Print debug messages to the console."""
         if self._debug:
             print("[DEBUG]", *args, **kwargs)
+
+    def _hard_clear(self, color: bytes = b"\x00\x00") -> None:
+        """Clear the framebuffer by writing zeros to it."""
+        # Open the framebuffer device and write zeros to it
+        with open(self._screen.frame_buffer, "wb") as f:
+            f.write(color * (self._screen.width * self._screen.height))  # RGB565: 2 bytes per pixel
