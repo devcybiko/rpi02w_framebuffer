@@ -66,7 +66,7 @@ class PMScreen:
 
     def flush(self) -> None:
         """Flush the current image to the framebuffer."""
-        self._write_framebuffer(self._img)
+        self._slow_write_framebuffer(self._img)
 
     def clear(self, color=None) -> None:
         self._draw.rectangle(
