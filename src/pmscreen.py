@@ -88,6 +88,6 @@ class PMScreen:
             (0, 0, self._img.width-1, self._img.height-1), 0x00 if color is None else color
         )
 
-    def line(self, rect: tuple, color="\xff\ff", width=None) -> None:
+    def line(self, rect: tuple, color="\xff\xff", width=1) -> None:
         _debug(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
         self._draw.line(rect, fill=color, width=width or self.gfx.line_width)
