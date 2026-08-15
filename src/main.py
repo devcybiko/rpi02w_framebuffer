@@ -4,7 +4,7 @@ from pmscreen import PMScreen, PMScreenConfig
 class Main:
     def __init__(self):
         print("Initializing Main class")
-        args = self._args()
+        self.args = self._args()
         print(f"Arguments: {args}")
 
     def _args(self):
