@@ -1,4 +1,5 @@
 from pmscreen import PMScreen, PMScreenConfig
+from PIL import Image, ImageDraw
 
 
 class Main:
