@@ -64,6 +64,7 @@ class PMScreen:
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(rgb565)
 
+    
     def clear(self, color=None) -> None:
         self._draw.rectangle(
             (0, 0, self._img.width-1, self._img.height-1), 0x00 if color is None else color
