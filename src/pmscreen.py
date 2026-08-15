@@ -26,16 +26,6 @@ class PMScreenConfig:
 class PMScreen:
     def __init__(self, _screen: PMScreenConfig):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
-        if self._screen.rotate:
-            if self._screen.rotate not in [0, 90, 180, 270]:
-                raise ValueError(
-                    f"Invalid rotation angle: {self._screen.rotate}. Must be one of 0, 90, 180, or 270 degrees."
-                )
-            if self._screen.rotate == 90 or self._screen.rotate == 270:
-                self._screen.width, self._screen.height = (
-                    self._screen.height,
-                    self._screen.width,
-                )
         self._hard_clear()
 
     def _hard_clear(self, color: bytes = b"\x00") -> None:
