@@ -27,7 +27,6 @@ class PMScreen:
     def __init__(self, _screen: PMScreenConfig):
         self._screen = _screen or PMScreenConfig()  # Use provided config or default
         self._img = Image.new("RGBA", (self._rect.width, self._rect.height), 0)
-
         self._hard_clear()
 
     def _hard_clear(self, color: bytes = b"\x00") -> None:
