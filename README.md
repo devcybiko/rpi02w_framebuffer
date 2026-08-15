@@ -4,3 +4,4 @@
 - How to draw to the framebuffer from Python
 
 ## Reaquirements
+- Raspberry Pi Zer
