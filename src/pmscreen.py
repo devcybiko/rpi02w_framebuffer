@@ -21,8 +21,6 @@ class PMScreenConfig:
 
 class PMScreen:
     def __init__(self, _config):
-        self._config = _config
-        ## by convention the config for an object is _classname
         self._screen = _screen = PMScreenConfig.from_dict(_config.__dict__)
         if self._screen.rotate:
             if self._screen.rotate not in [0, 90, 180, 270]:
