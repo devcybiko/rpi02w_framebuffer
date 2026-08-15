@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from PIL import Image, ImageDraw
 
 @dataclass
 class PMScreenConfig:
