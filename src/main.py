@@ -11,3 +11,5 @@ class Main:
         print("Initializing Main class")
         self.screen = PMScreen(PMScreenConfig())
 
+if __name__ == "__main__":
+    main = Main()
