@@ -64,10 +64,12 @@ class PMScreen:
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(rgb565)
 
-    def flush(self, img: Image.Image = None) -> None:
-        """Flush the image to the framebuffer."""
-        self._print(f"Flushing image to framebuffer")
-        self._slow_write_framebuffer(img)
+    def flush(self) -> None:
+        """Flush the current image to the framebuffer."""
+        if self._fast_flush:
+            self._fast_write_framebuffer(self._img)
+        else:
+            self._slow_write_framebuffer(self._img)
 
     def line(self, rect: tuple, color="white", width=1) -> None:
         self._print(f"Drawing line with rect: {rect}, color: {color}, width: {width}")
