@@ -46,3 +46,5 @@ class PMScreen:
                 rgb565.extend(struct.pack('<H', rgb565_word))
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(rgb565)
+
+    
