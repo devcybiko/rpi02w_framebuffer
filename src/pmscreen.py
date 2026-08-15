@@ -2,7 +2,6 @@ import os
 from dataclasses import dataclass
 from PIL import Image
 
-@from_dict
 @dataclass
 class PMScreenConfig:
         width: int = 1920
