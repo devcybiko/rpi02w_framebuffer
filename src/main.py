@@ -24,8 +24,6 @@ class Main:
         screen.line((10, 1070, 1910, 10), color="blue", width=3)  # Draw a blue diagonal line
         screen.flush()  # Flush the changes to the framebuffer
 
-        screen.flush()  # Flush the cleared image to the framebuffer
-
 if __name__ == "__main__":
     main = Main()
     main.run()
