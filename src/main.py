@@ -16,7 +16,7 @@ class Main:
 
     def run(self):
         print("Running Main class")
-        screen = PMScreen(PMScreenConfig(), fast_flush=self.args.fast, debug=not self.args.quiet)
+        screen = PMScreen(PMScreenConfig())
 
 if __name__ == "__main__":
     main = Main()
