@@ -11,7 +11,7 @@ class Main:
         print("Initializing Main class")
         args = self._args()
         print(f"Arguments: {args}")
-        screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=args.debug)
+        screen = PMScreen(PMScreenConfig(), fast_flush=args.fast, debug=not args.quiet)
         screen.clear()  # Clear the screen
         screen.rectangle((0, 0, 1919, 1079), color="red", width=1)  # Draw a white rectangle around the screen
         screen.line((0, 0, 1919, 1079))
