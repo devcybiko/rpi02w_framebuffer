@@ -55,4 +55,3 @@ class PMScreen:
     def flush(self) -> None:
         img = self.bitmap._img
         self._write_framebuffer(img)
-        self._atomic_write(img)
