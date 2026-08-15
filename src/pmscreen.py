@@ -55,3 +55,8 @@ class PMScreen:
     def flush(self) -> None:
         img = self.bitmap._img
         self._write_framebuffer(img)
+
+    def clear(self) -> None:
+        self._draw.rectangle(
+            (0, 0, self._img.width-1, self._img.height-1), fill=self.gfx.bg_color
+        )
