@@ -5,4 +5,4 @@
 
 ## Reaquirements
 - Raspberry Pi Zero 2 W
-- Raspbian 12 (bookworm) 
+- Raspbian 12 (bookworm) Kernel 6.12.62
