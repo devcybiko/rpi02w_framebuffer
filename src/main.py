@@ -9,6 +9,8 @@ def _debug(*args, **kwargs) -> None:
 class Main:
     def __init__(self):
         print("Initializing Main class")
+        args = self._args()
+        print(f"Arguments: {args}")
         screen = PMScreen(PMScreenConfig())
         screen.clear()  # Clear the screen
         screen.line((0, 0, 1919, 1079))
