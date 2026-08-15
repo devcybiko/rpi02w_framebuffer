@@ -8,5 +8,5 @@ def _debug(*args, **kwargs) -> None:
 
 class Main:
     def __init__(self):
-        _debug("Initializing Main class")
+        print("Initializing Main class")
         self.screen = PMScreen(PMScreenConfig())
