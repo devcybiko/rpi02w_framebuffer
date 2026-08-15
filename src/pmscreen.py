@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from PIL import Image, ImageDraw
-
+from 
 DEBUG = True
 
 def _debug(*args, **kwargs) -> None:
