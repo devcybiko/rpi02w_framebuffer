@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from PIL import Image, ImageDraw
-from 
+from clib import rgba_to_rgb16
+
 DEBUG = True
 
 def _debug(*args, **kwargs) -> None:
