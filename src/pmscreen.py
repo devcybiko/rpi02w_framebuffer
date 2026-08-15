@@ -26,6 +26,22 @@ class PMScreen:
         with open(self._screen.frame_buffer, "wb") as f:
             f.write(color * (self._screen.width * self._screen.height))  # RGB565: 2 bytes per pixel
 
+    def _fast_write_framebuffer(self, img: Image.Image) -> None:
+        """Write the image to the framebuffer."""
+        # self._screen.frame_buffer = "./fb0.jpg"
+        if self._screen.frame_buffer:
+            self._print(f"Writing to framebuffer: {self._screen.frame_buffer}")
+            from clib import rgba_to_rgb16
+            raw = img.tobytes("raw")
+            self._print(f"Raw image size: {len(raw)} bytes")
+            # Convert the image to RGB565 format
+            rgb565 = rgba_to_rgb16(raw, img.width, img.height)
+            self._print(f"Converted to RGB565 size: {len(rgb565)} bytes")
+            with open(self._screen.frame_buffer, "wb") as f:
+                self._print(f"Saving RGB565 image to {self._screen.frame_buffer}")
+                f.write(rgb565)
+            self._print("Framebuffer write complete")
+
     def _slow_write_framebuffer(self, img: Image.Image = None) -> None:
         """Write the image to the framebuffer slowly (for debugging)."""
         ## convert the image to RGB565 format using python code assuming 1920x1080 resolution x2 RGB565 bytes per pixel
